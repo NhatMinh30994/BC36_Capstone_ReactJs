@@ -10,6 +10,7 @@ import HomePage from "pages/home/HomePage";
 import Login from "pages/login/Login";
 import MovieDetail from "pages/movie-detail/MovieDetail";
 import MovieManagement from "pages/movie-management/MovieManagement";
+import MovieForm from "pages/movie-form/MovieForm";
 
 export default function Router() {
   const routing = useRoutes([
@@ -58,6 +59,14 @@ export default function Router() {
             {
               path: "/admin/movie-management",
               element: <MovieManagement />,
+            },
+            {
+              path: "/admin/movie-management/add",
+              element: <MovieForm />,
+            },
+            {
+              path: "/admin/movie-management/edit/:id",
+              element: <MovieForm />,
             },
           ],
         },

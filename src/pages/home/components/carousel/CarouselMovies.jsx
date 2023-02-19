@@ -1,31 +1,22 @@
 import React from "react";
 import { Carousel } from "antd";
 const contentStyle = {
-  margin: 0,
-  height: "160px",
-  color: "#fff",
-  lineHeight: "160px",
-  textAlign: "center",
-  background: "#364d79",
+  width: "100%",
+  height: "600px",
+  objectFit: "cover",
 };
 
 export default function CarouselMovies() {
   const onChange = (currentSlide) => {
-    console.log(currentSlide);
+    // console.log(currentSlide);
   };
   return (
-    <Carousel afterChange={onChange}>
+    <Carousel afterChange={onChange} autoplay>
       <div>
-        <h3 style={contentStyle}>1</h3>
+        <img style={contentStyle} src="https://i.ytimg.com/vi/FoZbdtQMTvM/maxresdefault.jpg"/>
       </div>
       <div>
-        <h3 style={contentStyle}>2</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>3</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>4</h3>
+        <img style={contentStyle} src="https://media.doisongphapluat.com/thumb_x1280x857/media/dang-nhat-duy/2022/12/03/poster-phim-tran-thanh-nha-ba-nu-dspl-31220222.jpg"/>
       </div>
     </Carousel>
   );
