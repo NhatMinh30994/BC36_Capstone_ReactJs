@@ -2,10 +2,9 @@ import { Spin } from "antd";
 import { createContext, useEffect, useState } from "react";
 
 import "./index.scss";
-import { WrapperSpin } from "./styled";
 
 const DEFAULT_STATE = {
-  isLoading: false,
+  isLoading: true,
 };
 
 const LoadingContext = createContext(DEFAULT_STATE);
@@ -22,12 +21,11 @@ const LoadingProvider = (props) => {
   return (
     <LoadingContext.Provider value={[state, setState]}>
       {state.isLoading && (
-        // <div className="spin">
-        //   <Spin size="large" />
-        // </div>
-        <WrapperSpin customBackground="black">
-          <Spin size="large" />
-        </WrapperSpin>
+        <div class="loaders-container">
+        <div class="container">
+          <div class="box"></div>
+        </div>
+        </div>
       )}
       {props.children}
     </LoadingContext.Provider>
