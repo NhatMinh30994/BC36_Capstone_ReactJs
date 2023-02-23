@@ -1,0 +1,28 @@
+
+.dark{
+    background-color: rgb(29, 27, 27) !important;
+}
+.li{
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+    margin-bottom: 10px !important;
+    text-decoration: none !important;;
+}
+.prl:hover{
+    // color: #28a745;
+    background-color: #ccc;
+    color: black;
+    text-decoration: none;
+    padding: 5px 5px;
+}
+.prl{
+    padding: 10px 30px !important;
+    color: white ;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 18px;
+}

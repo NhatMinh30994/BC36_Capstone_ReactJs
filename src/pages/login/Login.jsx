@@ -90,19 +90,16 @@ export default function Login() {
           <div className="method">
             <div className="method-control">
               <a href="#" className="method-action">
-                <i className="fa-brands fa-google" />
                 <span>Sign in with Google</span>
               </a>
             </div>
             <div className="method-control">
               <a href="#" className="method-action">
-                <i className="ion ion-logo-facebook" />
                 <span>Sign in with Facebook</span>
               </a>
             </div>
             <div className="method-control">
               <a href="#" className="method-action">
-                <i className="ion ion-logo-apple" />
                 <span>Sign in with Apple</span>
               </a>
             </div>
