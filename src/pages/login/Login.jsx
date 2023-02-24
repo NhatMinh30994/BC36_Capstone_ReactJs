@@ -42,7 +42,7 @@ export default function Login() {
             <p className="text text-normal">
               New user?{" "}
               <span>
-                <a href="#" className="text text-links">
+                <a onClick={() => navigate("/register")} className="text text-links text-info">
                   Create an account
                 </a>
               </span>
@@ -77,7 +77,7 @@ export default function Login() {
             <div className="input-control">
               <button className=" input-submit ">LOGIN</button>
 
-              <a href="#" className="text text-links">
+              <a href="#" className="text text-links text-info">
                 Forgot Password
               </a>
             </div>

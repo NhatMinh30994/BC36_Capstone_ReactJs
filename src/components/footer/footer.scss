@@ -20,15 +20,15 @@ body {
     background: url('https://i.imgur.com/9djv5sH.jpg');
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: right calc(110px + (150 - 110) * ((100vw - 360px) / (1600 - 360))) bottom !important
+    background-position: right calc(110px + (150 - 110) * ((100vw - 360px) / (1600 - 360))) bottom;
 }
 
 h2 {
-    font-size: calc(25px + (45 - 25) * ((100vw - 360px) / (1600 - 360))) !important
+    font-size: calc(25px + (45 - 25) * ((100vw - 360px) / (1600 - 360)));
 }
 
 h5 {
-    font-size: calc(20px + (28 - 20) * ((100vw - 360px) / (1600 - 360))) !important
+    font-size: calc(20px + (28 - 20) * ((100vw - 360px) / (1600 - 360)));
 }
 
 .fa {
@@ -38,11 +38,11 @@ h5 {
 }
 
 button {
-    font-size: calc(12px + (13 - 12) * ((100vw - 360px) / (1600 - 320))) !important;
-    padding-left: calc(20px + (28 - 20) * ((100vw - 360px) / (1600 - 360))) !important;
-    padding-right: calc(20px + (28 - 20) * ((100vw - 360px) / (1600 - 360))) !important;
-    padding-top: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important;
-    padding-bottom: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important
+    font-size: calc(12px + (13 - 12) * ((100vw - 360px) / (1600 - 320))) ;
+    padding-left: calc(20px + (28 - 20) * ((100vw - 360px) / (1600 - 360))) ;
+    padding-right: calc(20px + (28 - 20) * ((100vw - 360px) / (1600 - 360))) ;
+    padding-top: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) ;
+    padding-bottom: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) 
 }
 
 button:focus {
@@ -57,13 +57,13 @@ li {
     margin-bottom: 10px
 }
 
-input {
-    border: 2px solid green !important
-}
+// input {
+//     border: 2px solid green !important
+// }
 
 .input-group-lg>.custom-select,
 .input-group-lg>.form-control:not(textarea) {
-    height: calc(40px + (48 - 40) * ((100vw - 360px) / (1600 - 360))) !important
+    height: calc(40px + (48 - 40) * ((100vw - 360px) / (1600 - 360))) ;
 }
 
 input::-webkit-input-placeholder {
@@ -73,7 +73,7 @@ input::-webkit-input-placeholder {
 
 input::placeholder {
     vertical-align: middle !important;
-    font-size: calc(12px + (14 - 12) * ((100vw - 360px) / (1600 - 360))) !important
+    font-size: calc(12px + (14 - 12) * ((100vw - 360px) / (1600 - 360))) ;
 }
 
 input:focus {
@@ -94,7 +94,7 @@ li:first-child {
     font-size: 21px ;
     font-weight: bold;
     margin-bottom: calc(40px + (48 - 40) * ((100vw - 360px) / (1600 - 360))) ;
-    color: #757575 !important
+    color: #757575;
 }
 
 footer {
