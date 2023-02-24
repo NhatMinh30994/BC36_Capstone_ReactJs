@@ -14,28 +14,27 @@ export default function MovieList() {
   const renderMovieList = () => {
     return movieList.map((ele) => {
       return (
-        <div className="col-3" key={ele.maPhim}>
+        <div className="col-3 mx-auto khung" key={ele.maPhim}>
           <div
-            className="card movie-card"
+            className="card movie-card rounded-pill border-secondary "
             style={{ marginBottom: 20, height: 500 }}
           >
             <img
               style={{ height: 350, objectFit: "cover" }}
-              className="card-img-top"
+              className="card-img-top rounded-pill border-secondary"
               src={ele.hinhAnh}
               alt="movie"
             />
-            <div className="card-body upPerCase">
+            <div className="card-body upPerCase tam">
               <h5 className="card-title">{ele.tenPhim}</h5>
-              <Button
+              <button
                 onClick={() => {
                   navigate(`/movie-detail/${ele.maPhim}`);
                 }}
-                type="dashed"
-                size="large"
+                className=" btn btn-info rounded-pill "
               >
-                XEM CHI TIẾT
-              </Button>
+                Chi Tiết
+              </button>
             </div>
           </div>
         </div>
@@ -45,8 +44,10 @@ export default function MovieList() {
 
   return (
     <div className="row mt-3 mx-auto w-75">
-      <h3 id="phim" className="col-12">PHIM CHIẾU RẠP</h3>
-      <br/>
+      <h3 id="phim" className="col-12">
+        PHIM CHIẾU RẠP
+      </h3>
+      <br />
       {renderMovieList()}
     </div>
   );

@@ -24,9 +24,9 @@ export default function Detail() {
         <div className="col-3">
           <img className="w-100" src={movieDetail.hinhAnh} />
         </div>
-        <div className="col-9">
+        <div className="col-9 text-giua">
           <h4>{movieDetail.tenPhim}</h4>
-          <p>{movieDetail.moTa}</p>
+          <p className="text-giua">{movieDetail.moTa}</p>
           <p>{formatDate(movieDetail.ngayKhoiChieu)}</p>
           <div>
             <button className="btn btn-info mr-2">TRAILER</button>
