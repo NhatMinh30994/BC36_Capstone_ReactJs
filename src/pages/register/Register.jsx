@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { registerApi } from "services/user";
 import "./register.scss";
+import { setUserInfoAction } from "../../store/actions/userAction";
+import { notification } from "antd";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -15,6 +17,28 @@ export default function Register() {
     maNhom:"",
     hoTen:"",
   });
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setState({
+      ...state,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const result = await registerApi(state);
+    console.log(result.data.content);
+    // if () {
+    //   notification.warning({
+    //     message: "Chưa đăng nhập không thể truy cập.",
+    //   });
+    // }
+      dispatch(setUserInfoAction(result.data.content));
+      navigate("/login");
+
+  };
 
 
   return (

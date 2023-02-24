@@ -61,14 +61,14 @@ export default function Header() {
             <>
               <button
                 onClick={() => navigate("/register")}
-                className="btn btn-outline-info my-2 my-sm-0 mr-2 font-weight-bold rounded-pill border-0"
+                className="btn btn-outline-info my-2 my-sm-0 mr-2  rounded-pill border-0"
                 type="sumit"
               >
                 REGISTER
               </button>
               <button
                 onClick={() => navigate("/login")}
-                className="btn btn-outline-success my-2 my-sm-0 font-weight-bold rounded-pill border-0"
+                className="btn btn-outline-success my-2 my-sm-0  rounded-pill border-0"
               >
                 LOGIN
               </button>
