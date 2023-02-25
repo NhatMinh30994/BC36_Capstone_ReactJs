@@ -4,6 +4,11 @@ import { useMovieList } from "hooks/useMovieList";
 import { formatDate } from "utils";
 import { useNavigate } from "react-router-dom";
 import { deleteMovieApi } from "services/movie";
+import {
+  CalendarOutlined,
+  DeleteOutlined,
+  EditOutlined,
+} from "@ant-design/icons";
 
 export default function MovieManagement() {
   const movieList = useMovieList();
@@ -38,35 +43,69 @@ export default function MovieManagement() {
       render: (text) => {
         // console.log(text);
         return (
-          <div>
-            <Button
+          // <div>
+          //   <Button
+          //     onClick={() =>
+          //       navigate(`/admin/movie-management/edit/${text.maPhim}`)
+          //     }
+          //     type="primary"
+          //     ghost
+          //   >
+          //     EDIT
+          //   </Button>
+          //   <Button
+          //     onClick={async () => {
+          //       try {
+          //         await deleteMovieApi(text.maPhim);
+          //         notification.success({
+          //           message: "Xóa phim thành công",
+          //         });
+          //       } catch (error) {
+          //         notification.error({
+          //           message: error.response.data.content,
+          //         })
+          //       }
+          //     }}
+          //     type="primary"
+          //     danger
+          //     ghost
+          //   >
+          //     DELETE
+          //   </Button>
+          // </div>
+          <div style={{ display: "flex" }}>
+            <EditOutlined
+              style={{ color: "blue", fontSize: 20, marginRight: 3 }}
               onClick={() =>
                 navigate(`/admin/movie-management/edit/${text.maPhim}`)
               }
-              type="primary"
-              ghost
-            >
-              EDIT
-            </Button>
-            <Button
+            />
+            <DeleteOutlined
+              style={{ color: "red", fontSize: 20, marginRight: 3 }}
               onClick={async () => {
                 try {
-                  await deleteMovieApi(text.maPhim);
-                  notification.success({
-                    message: "Xóa phim thành công",
-                  });
+                  if (window.confirm("Bạn xác nhận muốn xóa phim này?")) {
+                    await deleteMovieApi(text.maPhim);
+                    notification.success({
+                      message: "Xóa phim thành công",
+                    });
+                  }
                 } catch (error) {
                   notification.error({
                     message: error.response.data.content,
-                  })
+                  });
                 }
               }}
-              type="primary"
-              danger
-              ghost
-            >
-              DELETE
-            </Button>
+            />
+            <CalendarOutlined
+              className="add-icon"
+              style={{ color: "green", fontSize: 20 }}
+              onClick={() =>
+                navigate(
+                  `/admin/movie-management/showtime-management/add/${text.maPhim}`
+                )
+              }
+            />
           </div>
         );
       },
