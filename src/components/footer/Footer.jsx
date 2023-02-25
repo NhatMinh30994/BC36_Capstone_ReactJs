@@ -19,7 +19,7 @@ export default function Footer() {
                       {" "}
                       <img
                         src="https://www.svgrepo.com/show/227816/galaxy.svg"
-                        className="img-fluid mb-1 "
+                        className="img-fluid1 mb-1 "
                       />
                     </span>
                     <b className="text-dark">

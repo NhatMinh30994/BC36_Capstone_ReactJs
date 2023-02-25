@@ -49,7 +49,7 @@ export default function Header() {
         <div className="ml-auto">
           {userState.userInfo ? (
             <>
-              <span className="mr-3">Hello {userState.userInfo.hoTen}</span>
+              <span className="mr-3 text-danger ">Hello {userState.userInfo.hoTen}</span>
               <button
                 onClick={handleLogout}
                 className="btn btn-outline-danger font-weight-bold rounded-pill border-0 "

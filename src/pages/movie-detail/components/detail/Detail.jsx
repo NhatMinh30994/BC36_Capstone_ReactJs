@@ -19,17 +19,21 @@ export default function Detail() {
   };
 
   return (
-    <div className="col-12">
-      <div className="row">
-        <div className="col-3">
-          <img className="w-100" src={movieDetail.hinhAnh} />
+    <div className="col-12 mb-3">
+      <div className="row ">
+        <div className="col-4">
+          <img className="w-100 rounded" src={movieDetail.hinhAnh} />
         </div>
-        <div className="col-9 text-giua">
-          <h4>{movieDetail.tenPhim}</h4>
-          <p className="text-giua">{movieDetail.moTa}</p>
-          <p>{formatDate(movieDetail.ngayKhoiChieu)}</p>
-          <div>
-            <button className="btn btn-info mr-2">TRAILER</button>
+        <div className="col-8 text-justifys">
+          <h4 className="text-uppercase pb-2 font-weight-bolder">{movieDetail.tenPhim}</h4>
+          <p className="text-justifys">{movieDetail.moTa}</p>
+          <p>Phân Loại: Phim chiếu rạp</p>
+          <p>Khởi chiếu: {formatDate(movieDetail.ngayKhoiChieu)}</p>
+          <p className="">Thời lượng: 95 phút</p>
+          <p>Ngôn ngữ: Phụ đề tiếng Việt</p>
+          <div className="pt-3">
+            <button className="btn btn-success btn-lg mr-2">Xem Trailer</button>
+            <button className="btn btn-danger btn-lg mr-2"><a className="text-white text-decoration-none" href="#muave">Mua Vé Ngay</a> </button>
           </div>
         </div>
       </div>
