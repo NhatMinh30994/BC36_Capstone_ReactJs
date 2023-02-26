@@ -30,11 +30,6 @@ export default function Register() {
 
     const result = await registerApi(state);
     console.log(result.data.content);
-    // if () {
-    //   notification.warning({
-    //     message: "Chưa đăng nhập không thể truy cập.",
-    //   });
-    // }
       dispatch(setUserInfoAction(result.data.content));
       navigate("/login");
 

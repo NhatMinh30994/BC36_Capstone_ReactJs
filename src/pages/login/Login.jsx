@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import { loginApi } from "../../services/user";
 import { setUserInfoAction } from "../../store/actions/userAction";
 import "./login.scss";
@@ -23,14 +23,12 @@ export default function Login() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // console.log(state);
     const result = await loginApi(state);
-    console.log(result);
-
-    localStorage.setItem("USER_INFO_KEY", JSON.stringify(result.data.content));
-
+    // console.log(result);
     dispatch(setUserInfoAction(result.data.content));
+    localStorage.setItem("USER_INFO_KEY", JSON.stringify(result.data.content));
     navigate("/");
+
   };
 
   return (

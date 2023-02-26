@@ -10,7 +10,6 @@ export const loginApi = (infomation) => {
 };
 
 export const registerApi = (infomation) => {
-  // infomation là dữ liệu từ bên ngoài truyền vào (là taiKhoan và matKhau khi nhập vào form)
   return axiosRequest({
     url: `/QuanLyNguoiDung/DangKy`,
     method: "POST",
@@ -18,3 +17,11 @@ export const registerApi = (infomation) => {
   });
 };
 
+
+export const accApi = (infomation) => {
+  return axiosRequest({
+    url: `/QuanLyNguoiDung/LayDanhSachNguoiDung`,
+    method: "GET",
+    data: infomation,
+  });
+};
