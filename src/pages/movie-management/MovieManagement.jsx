@@ -12,7 +12,7 @@ import {
 
 export default function MovieManagement() {
   const movieList = useMovieList();
-  console.log(movieList);
+  // console.log(movieList);
   const navigate = useNavigate();
 
   const columns = [
@@ -43,36 +43,6 @@ export default function MovieManagement() {
       render: (text) => {
         // console.log(text);
         return (
-          // <div>
-          //   <Button
-          //     onClick={() =>
-          //       navigate(`/admin/movie-management/edit/${text.maPhim}`)
-          //     }
-          //     type="primary"
-          //     ghost
-          //   >
-          //     EDIT
-          //   </Button>
-          //   <Button
-          //     onClick={async () => {
-          //       try {
-          //         await deleteMovieApi(text.maPhim);
-          //         notification.success({
-          //           message: "Xóa phim thành công",
-          //         });
-          //       } catch (error) {
-          //         notification.error({
-          //           message: error.response.data.content,
-          //         })
-          //       }
-          //     }}
-          //     type="primary"
-          //     danger
-          //     ghost
-          //   >
-          //     DELETE
-          //   </Button>
-          // </div>
           <div style={{ display: "flex" }}>
             <EditOutlined
               style={{ color: "blue", fontSize: 20, marginRight: 3 }}

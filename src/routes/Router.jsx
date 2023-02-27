@@ -12,7 +12,7 @@ import MovieDetail from "pages/movie-detail/MovieDetail";
 import MovieManagement from "pages/movie-management/MovieManagement";
 import MovieForm from "pages/movie-form/MovieForm";
 import Register from "pages/register/Register";
-import ShowtimeManagemen from "pages/showtime-management/ShowtimeManagemen";
+import ShowtimeManagement from "pages/showtime-management/ShowtimeManagement";
 
 export default function Router() {
   const routing = useRoutes([
@@ -76,7 +76,7 @@ export default function Router() {
             },
             {
               path: "/admin/movie-management/showtime-management/add/:id",
-              element: <ShowtimeManagemen />,
+              element: <ShowtimeManagement />,
             },
           ],
         },
