@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, notification, Space, Table, Tag } from "antd";
+import { Button, notification, Space, Table, Tag, Input } from "antd";
 import { useMovieList } from "hooks/useMovieList";
 import { formatDate } from "utils";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,9 @@ import {
   CalendarOutlined,
   DeleteOutlined,
   EditOutlined,
+  SearchOutlined,
 } from "@ant-design/icons";
+const { Search } = Input;
 
 export default function MovieManagement() {
   const movieList = useMovieList();
@@ -81,15 +83,23 @@ export default function MovieManagement() {
       },
     },
   ];
-
+  const onSearch = (value) => console.log(value);
   return (
     <div>
+      <h2>Quản lý phim</h2>
       <Button
         onClick={() => navigate("/admin/movie-management/add")}
         className="mb-4"
       >
         THÊM PHIM
       </Button>
+      <Search
+        className="mb-3"
+        placeholder="input search text"
+        enterButton={<SearchOutlined />}
+        size="large"
+        onSearch={onSearch}
+      />
       <Table columns={columns} dataSource={movieList} />;
     </div>
   );
