@@ -25,7 +25,7 @@ export const fetchUserTypeApi = () => {
 
 export const editUserApi = (data) => {
   return axiosRequest({
-    url: `/QuanLyPhim/CapNhatThongTinNguoiDung`,
+    url: `/QuanLyNguoiDung/CapNhatThongTinNguoiDung`,
     method: "POST",
     data: data,
   });

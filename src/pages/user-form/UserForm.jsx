@@ -12,15 +12,6 @@ import { useForm } from "antd/es/form/Form";
 import { useNavigate, useParams } from "react-router-dom";
 
 export default function UserForm() {
-  //   const [userState, setUserState] = useState({
-  //     taiKhoan: "",
-  //     matKhau: "",
-  //     email: "",
-  //     soDt: "",
-  //     hoTen: "",
-  //     maLoaiNguoiDung: "KhachHang",
-  //     maNhom: GROUP_ID,
-  //   });
   const [userType, setUserType] = useState([]);
   const [form] = useForm();
   const navigate = useNavigate();

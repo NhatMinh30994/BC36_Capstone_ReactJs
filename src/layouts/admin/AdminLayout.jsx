@@ -1,13 +1,13 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import {
+  FileAddOutlined,
+  FileDoneOutlined,
   FileOutlined,
-  PieChartOutlined,
+  UserAddOutlined,
   UserOutlined,
-  DesktopOutlined,
-  TeamOutlined,
 } from "@ant-design/icons";
-import { Breadcrumb, Layout, Menu, theme } from "antd";
+import { Avatar, Breadcrumb, Layout, Menu, theme } from "antd";
 import { useState } from "react";
 const { Header, Content, Footer, Sider } = Layout;
 function getItem(label, key, icon, children) {
@@ -19,18 +19,14 @@ function getItem(label, key, icon, children) {
   };
 }
 const items = [
-  getItem("Option 1", "1", <PieChartOutlined />),
-  getItem("Option 2", "2", <DesktopOutlined />),
   getItem("User", "sub1", <UserOutlined />, [
-    getItem("Tom", "3"),
-    getItem("Bill", "4"),
-    getItem("Alex", "5"),
+    getItem("User List", "1", <UserOutlined />),
+    getItem("Add users", "2", <UserAddOutlined />),
   ]),
-  getItem("Team", "sub2", <TeamOutlined />, [
-    getItem("Team 1", "6"),
-    getItem("Team 2", "8"),
+  getItem("Team", "sub2", <FileOutlined />, [
+    getItem("Films", "3", <FileDoneOutlined />),
+    getItem("Add new", "4", <FileAddOutlined />),
   ]),
-  getItem("Files", "9", <FileOutlined />),
 ];
 
 export default function AdminLayout() {
@@ -64,12 +60,12 @@ export default function AdminLayout() {
         />
       </Sider>
       <Layout className="site-layout">
-        <Header
-          style={{
+        <Header style={{
             padding: 0,
             background: colorBgContainer,
-          }}
-        />
+          }}>
+            <Avatar size="default" icon={<UserOutlined />}></Avatar>
+        </Header>
         <Content
           style={{
             margin: "0 16px",
@@ -80,8 +76,8 @@ export default function AdminLayout() {
               margin: "16px 0",
             }}
           >
-            <Breadcrumb.Item>User</Breadcrumb.Item>
-            <Breadcrumb.Item>Bill</Breadcrumb.Item>
+            {/* <Breadcrumb.Item>User</Breadcrumb.Item>
+            <Breadcrumb.Item>Bill</Breadcrumb.Item> */}
           </Breadcrumb>
           <div
             style={{
