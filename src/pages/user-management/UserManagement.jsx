@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Table } from "antd";
+import { Button, notification, Table } from "antd";
 import { Input, Space } from "antd";
 import {
   DeleteOutlined,
@@ -8,6 +8,7 @@ import {
 } from "@ant-design/icons";
 import { useUserList } from "hooks/useUserList";
 import { useNavigate } from "react-router-dom";
+import { deleteUserApi } from "services/userManagement";
 const { Search } = Input;
 
 export default function UserManagement() {
@@ -60,6 +61,20 @@ export default function UserManagement() {
             />
             <DeleteOutlined
               style={{ color: "red", fontSize: 20, marginRight: 3 }}
+              onClick={async () => {
+                try {
+                  if (window.confirm("Bạn xác nhận muốn xóa user này")) {
+                    await deleteUserApi(text.taiKhoan);
+                    notification.success({
+                      message: "Xóa người dùng thành công",
+                    });
+                  }
+                } catch (error) {
+                  notification.error({
+                    message: error.response.data.content,
+                  });
+                }
+              }}
             />
           </div>
         );
@@ -84,7 +99,7 @@ export default function UserManagement() {
         size="large"
         onSearch={onSearch}
       />
-      <Table columns={columns} dataSource={userList} />;
+      <Table columns={columns} dataSource={userList} />
     </div>
   );
 }

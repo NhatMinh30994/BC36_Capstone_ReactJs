@@ -88,6 +88,10 @@ export default function Router() {
               path: "/admin/user-management/add",
               element: <UserForm />,
             },
+            {
+              path: "/admin/user-management/edit/:userId",
+              element: <UserForm />,
+            },
           ],
         },
       ],
