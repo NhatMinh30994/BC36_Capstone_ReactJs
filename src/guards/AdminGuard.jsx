@@ -14,7 +14,7 @@ export default function AdminGuard() {
       notification.warning({
         message: "Chưa đăng nhập không thể truy cập.",
       });
-      navigate("/");
+      navigate("/login");
     } else {
       // Người dùng đã Đăng nhập nhưng maLoaiNguoiDung = KhachHang
       if (userState.userInfo.maLoaiNguoiDung === MaLoaiNguoiDung.KhachHang) {

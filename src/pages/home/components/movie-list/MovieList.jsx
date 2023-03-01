@@ -14,7 +14,7 @@ export default function MovieList() {
   const renderMovieList = () => {
     return movieList.map((ele) => {
       return (
-        <div className="col-3 mx-auto khung" key={ele.maPhim}>
+        <div className="col-xl-3 col-lg-4 col-md-4 col-sm-6 mx-auto khung" key={ele.maPhim}>
           <div
             className="card movie-card rounded-pill border-secondary "
             style={{ marginBottom: 20, height: 500 }}
@@ -44,7 +44,7 @@ export default function MovieList() {
 
   return (
     <div className="row mt-3 mx-auto w-75">
-      <h3 id="phim" className="col-12">
+      <h3 id="phim" className="col-11 w-100 mx-auto">
         PHIM CHIẾU RẠP
       </h3>
       <br />

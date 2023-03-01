@@ -13,10 +13,10 @@ export default function News() {
     autoplaySpeed: 1600,
   };
   return (
-    <div  className="container-fluid justify-content-center plr">
-      <h3 id="tintuc">BLOG PHIM</h3>
-      <div class="row">
-        <div class="col-md-3">
+    <div  className="container-fluid justify-content-center">
+      <h3 className="col-11 mx-auto pb-4" id="tintuc">BLOG PHIM</h3>
+      <div class="row ">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 pb-4 mx-auto">
           <div className="border">
             <div className="card-header p-0 position-relative">
               <img src="https://cdn.galaxycine.vn/media/2023/2/18/ant-man-and-the-wasp-quantumania-cu-lua-xuat-sac-cua-marvel-3_1676654214338.jpg" />
@@ -27,7 +27,7 @@ export default function News() {
               </a>
               <p>
                 Ant-Man And The Wasp: Quantumania đã tóm tắt bộ phim thì lầm to
-                rồi. Marvel tặng tất cả chúng ta cú lừa ngoạn mục.
+                rồi. Marvel tặng tất cả chúng ta cú lừa...
               </p>
               <div className="author align-items-center mt-3 mb-1"></div>
               <ul className="blog-meta">
@@ -48,7 +48,7 @@ export default function News() {
             </div>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 pb-4 mx-auto">
           <div className="border">
             <div className="card-header p-0 position-relative">
               <img src="https://cdn.galaxycine.vn/media/2023/1/30/450_1675096902304.jpg" />
@@ -81,7 +81,7 @@ export default function News() {
             </div>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 pb-4 mx-auto">
           <div className="border">
             <div className="card-header p-0 position-relative">
               <img src="https://cdn.galaxycine.vn/media/2023/1/21/chi-chi-em-em-2-ngoc-trinh-hoan-hao--minh-hang-xuat-sac-6_1674277365986.jpg" />
@@ -93,7 +93,7 @@ export default function News() {
               </a>
               <p>
                 Đạo diễn Vũ Ngọc Đãng thành công vừa làm nổi bật Ngọc Trinh bốc
-                lửa vừa tôn được nét đẹp đằm thắm của Minh Hằng.
+                lửa vừa tôn được nét đẹp đằm thắm...
               </p>
               <div className="author align-items-center mt-3 mb-1"></div>
               <ul className="blog-meta">
@@ -114,7 +114,7 @@ export default function News() {
             </div>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 pb-4 mx-auto">
           <div className="border">
             <div className="card-header p-0 position-relative">
               <img src="https://cdn.galaxycine.vn/media/2023/1/21/nha-ba-nu-chien-thang-phong-ve-lan-nua-cua-tran-thanh-1_1674276111272.jpeg" />
@@ -125,7 +125,7 @@ export default function News() {
               </a>
               <p>
                 Nhà Bà Nữ không phải phim chiếu rạp xuất sắc nhưng chắc chắn là
-                tác phẩm cực kì thích hợp để rủ gia đình và bạn bè ra
+                tác phẩm cực kì thích hợp để rủ gia đình...
               </p>
               <div className="author align-items-center mt-3 mb-1"></div>
               <ul className="blog-meta">
@@ -148,9 +148,9 @@ export default function News() {
         </div>
       </div>
 
-      <h3 id="sukien">TIN KHUYẾN MÃI</h3>
-      <Slider  className="row " {...settings} >
-        <div >
+      <h3 className="col-11 mx-auto pb-4" id="sukien">TIN KHUYẾN MÃI</h3>
+      <Slider  className="row mx-auto" {...settings} >
+        <div>
           <img className="img"
             src="https://cdn.galaxycine.vn/media/2023/2/6/500_1675669941430.jpg"
             alt=""
@@ -182,9 +182,9 @@ export default function News() {
         </div>
       </Slider>
 
-      <h3>GANAXI CINEMA</h3>
+      <h3 className="col-11 mx-auto pb-4">GANAXI CINEMA</h3>
       <div className="row content-seo ">
-        <div className="col-md-12 pd">
+        <div className="col-xl-12 col-md-12 mx-auto pb-item">
           <div className="content-text ">
             <p>
               {" "}
@@ -211,7 +211,7 @@ export default function News() {
               email phản hồi của <b>Ganaxi Cinema</b> sẽ gửi ngay vào điện thoại
               và hộp mail của bạn.
             </p>
-            <p className="">
+            <p>
               Hiện nay, <b>Ganaxi Cinema</b> đang ngày càng phát triển hơn nữa
               với các chương trình đặc sắc, các khuyến mãi hấp dẫn, đem đến cho
               khán giả những bộ phim bom tấn của thế giới và Việt Nam nhanh

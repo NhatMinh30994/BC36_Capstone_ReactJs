@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="row justify-content-around mb-0  pb-0 ">
             <div className=" col-11">
               <div className="row justify-content-center">
-                <div className="col-md-3 col-12 font-italic align-items-center mt-md-3 mt-4">
+                <div className="col-xl-3 col-lg-3 col-md-3 col-6 font-italic align-items-center mt-md-3 mt-4">
                   <h5>
                     <span>
                       {" "}
@@ -43,7 +43,7 @@ export default function Footer() {
                     Ⓒ 2023 Ganaxi Cinema Technologies
                   </small>
                 </div>
-                <div className="col-md-3 col-12 my-sm-0 mt-5">
+                <div className="col-xl-3 col-lg-3 col-md-3 col-6 my-sm-0 mt-5">
                   <ul className="list-unstyled">
                     <li className="mt-md-3 mt-4">GIỚI THIỆU</li>
                     <li>VỀ CHÚNG TÔI</li>
@@ -52,7 +52,7 @@ export default function Footer() {
                     <li>CHÍNH SÁCH BẢO MẬT</li>
                   </ul>
                 </div>
-                <div className="col-md-3 col-12 my-sm-0 mt-5">
+                <div className="col-xl-3 col-lg-3 col-md-3 col-6 my-sm-0 mt-5">
                   <ul className="list-unstyled">
                     <li className="mt-md-3 mt-4">GÓC ĐIỆN ẢNH</li>
                     <li>THỂ LOẠI PHIM</li>
@@ -61,7 +61,7 @@ export default function Footer() {
                     <li>PHIM HAY THÁNG</li>
                   </ul>
                 </div>
-                <div className="col-xl-auto col-md-3 col-12 my-sm-0 mt-5">
+                <div className="col-xl-auto col-xl-3 col-lg-3 col-md-3 col-6 my-sm-0 mt-5">
                   <ul className="list-unstyled">
                     <li className="mt-md-3 mt-4">HỖ TRỢ</li>
                     <li>GÓP Ý</li>
