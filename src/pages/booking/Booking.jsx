@@ -88,6 +88,7 @@ export default function Booking() {
               Ghế VIP
             </div>
           </div>
+          <p>acccc</p>
         <div className="col-xl-12 col-lg-12 pt-4 text-center">
           <div style={{ width: "90%" }} className="mx-auto">
             {renderSeats()}
