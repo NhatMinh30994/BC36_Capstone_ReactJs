@@ -170,7 +170,15 @@ export default function MovieForm() {
       </Form.Item>
       <Image src={imagePreview} />
       <Form.Item label="Tác vụ">
-        <Button htmlType="submit">LƯU</Button>
+      {params.id ? (
+          <>
+            <Button htmlType="submit">CẬP NHẬT</Button>
+          </>
+        ) : (
+          <>
+            <Button htmlType="submit">LƯU</Button>
+          </>
+        )}
       </Form.Item>
     </Form>
   );

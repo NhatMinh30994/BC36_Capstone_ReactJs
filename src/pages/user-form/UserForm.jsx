@@ -72,12 +72,14 @@ export default function UserForm() {
 
     if (params.userId) {
       await editUserApi(data);
-    }else{
+    } else {
       await addUserApi(data);
     }
 
     notification.success({
-      message: params.userId ? "Cập nhật người dùng thành công" : "Thêm người dùng thành công",
+      message: params.userId
+        ? "Cập nhật người dùng thành công"
+        : "Thêm người dùng thành công",
     });
     navigate("/admin/user-management");
   };
@@ -173,7 +175,15 @@ export default function UserForm() {
         <Select>{renderTypeUser()}</Select>
       </Form.Item>
       <Form.Item label="Tác vụ">
-        <Button htmlType="submit">LƯU</Button>
+        {params.userId ? (
+          <>
+            <Button htmlType="submit">CẬP NHẬT</Button>
+          </>
+        ) : (
+          <>
+            <Button htmlType="submit">LƯU</Button>
+          </>
+        )}
       </Form.Item>
     </Form>
   );
