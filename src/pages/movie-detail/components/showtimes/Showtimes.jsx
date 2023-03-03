@@ -23,7 +23,7 @@ export default function Showtimes() {
       return (
         <a
           key={ele.maHeThongRap}
-          className={`nav-link text-capitalize bg-light text-dark rounded-pill ${idx === 0 && "active"}`}
+          className={`nav-link text-uppercase bg-light text-dark rounded-pill ${idx === 0 && "active"}`}
           data-toggle="pill"
           href={`#${ele.maHeThongRap}`}
           role="tab"
@@ -60,8 +60,8 @@ export default function Showtimes() {
                   <div className="row">
                     {ele?.lichChieuPhim?.map((ele) => {
                       return (
-                        <div key={ele.maLichChieu} className="col-7 border">
-                          <Link className="text-dark text-decoration-none" to={`/booking/${ele.maLichChieu}`}> <button className="btn btn-info rounded-pill m-3">Đặt vé <span>2D -  Phụ đề </span></button>{formatDate(ele.ngayChieuGioChieu)}  </Link>
+                        <div key={ele.maLichChieu} className="col-xl-7 col-lg-9 col-md-10 col-sm-11 col-11 border text-center">
+                          <Link className="text-dark text-decoration-none" to={`/booking/${ele.maLichChieu}`}> <button className="btn btn-info rounded-pill m-3">Đặt vé <span>2D -  Phụ đề </span></button><br />{formatDate(ele.ngayChieuGioChieu)}  </Link>
                         </div>
                       );
                     })}
@@ -80,7 +80,7 @@ export default function Showtimes() {
       <h4 id="muave" className="col-12 border-bottom border-success text-center mb-5 pb-3 pt-5 text-secondary font-weight-bolder">VUI LÒNG CHỌN THÔNG TIN VÉ</h4>
       <div className="row">
         <div className="col-4">
-          <h5 className="text-center border-bottom border-success pb-3 pt-2 text-secondary font-weight-normal ">RẠP PHIM</h5>
+          <h5 className="text-center border-bottom border-success pb-3 pt-2 text-secondary font-weight-normal ">RẠP</h5>
           <div
             className="nav flex-column nav-pills pt-2 text-center"
             id="v-pills-tab"
@@ -91,7 +91,7 @@ export default function Showtimes() {
           </div>
         </div>
         <div className="col-8">
-        <h5 className="text-center border-bottom border-success pb-3 pt-2 text-secondary font-weight-normal ">THÔNG TIN RẠP - THỜI GIAN CHIẾU</h5>
+        <h5 className="text-center border-bottom border-success pb-3 pt-2 text-secondary font-weight-normal ">THÔNG TIN CHI TIẾT</h5>
           <div className="tab-content pt-2 pl-5" id="v-pills-tabContent">
             {renderTabContent()}
           </div>
