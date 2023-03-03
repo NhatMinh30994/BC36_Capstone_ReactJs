@@ -100,7 +100,7 @@ export default function MovieManagement() {
         size="large"
         onSearch={onSearch}
       />
-      <Table columns={columns} dataSource={movieList} />;
+      <Table columns={columns} dataSource={movieList} />
     </div>
   );
 }

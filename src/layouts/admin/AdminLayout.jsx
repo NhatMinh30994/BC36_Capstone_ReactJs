@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import {
   FileAddOutlined,
   FileDoneOutlined,
@@ -9,6 +9,8 @@ import {
 } from "@ant-design/icons";
 import { Avatar, Breadcrumb, Layout, Menu, theme } from "antd";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setUserInfoAction } from "store/actions/userAction";
 const { Header, Content, Footer, Sider } = Layout;
 function getItem(label, key, icon, children) {
   return {
@@ -21,15 +23,25 @@ function getItem(label, key, icon, children) {
 const items = [
   getItem("User", "sub1", <UserOutlined />, [
     getItem("User List", "1", <UserOutlined />),
-    getItem("Add users", "2", <UserAddOutlined />),
+    getItem("Add user", "2", <UserAddOutlined />),
   ]),
-  getItem("Team", "sub2", <FileOutlined />, [
-    getItem("Films", "3", <FileDoneOutlined />),
-    getItem("Add new", "4", <FileAddOutlined />),
+  getItem("Movie", "sub2", <FileOutlined />, [
+    getItem("Movie List", "3", <FileDoneOutlined />),
+    getItem("Add movie", "4", <FileAddOutlined />),
   ]),
 ];
 
 export default function AdminLayout() {
+  const userState = useSelector((state) => state.userReducer);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    localStorage.removeItem("USER_INFO_KEY");
+    dispatch(setUserInfoAction(null));
+    navigate("/");
+  };
+
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer },
@@ -57,14 +69,47 @@ export default function AdminLayout() {
           defaultSelectedKeys={["1"]}
           mode="inline"
           items={items}
-        />
+        ></Menu>
       </Sider>
       <Layout className="site-layout">
-        <Header style={{
+        <Header
+          style={{
             padding: 0,
             background: colorBgContainer,
-          }}>
-            <Avatar size="default" icon={<UserOutlined />}></Avatar>
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            padding: "0px 15px",
+          }}
+        >
+          <Avatar
+            style={{
+              backgroundColor: "rgb(228 204 187)",
+              color: "rgb(206 141 131)",
+            }}
+            size="default"
+            icon={<UserOutlined />}
+          ></Avatar>
+          {userState.userInfo && (
+            <>
+              <span
+                className="mr-3 ml-2 px-2"
+                style={{
+                  border: "1px dashed #000",
+                  borderRadius: "5px",
+                  lineHeight: "32px",
+                }}
+              >
+                {userState.userInfo.hoTen}
+              </span>
+              <button
+                onClick={handleLogout}
+                className="btn btn-danger font-weight-bold rounded-pill border-0"
+              >
+                LOGOUT
+              </button>
+            </>
+          )}
         </Header>
         <Content
           style={{
@@ -86,7 +131,7 @@ export default function AdminLayout() {
               background: colorBgContainer,
             }}
           >
-            <Outlet/>
+            <Outlet />
           </div>
         </Content>
         <Footer

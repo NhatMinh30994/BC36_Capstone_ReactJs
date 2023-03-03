@@ -1,3 +1,5 @@
+import { UserOutlined } from "@ant-design/icons";
+import { Avatar } from "antd";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -28,7 +30,8 @@ export default function Header() {
           aria-label="Toggle navigation"
         >
           <span className="text-dark rounded bg-white  pl-2 pr-2 pb-1">
-            <svg className="text-center"
+            <svg
+              className="text-center"
               xmlns="http://www.w3.org/2000/svg"
               width="25"
               height="25"
@@ -41,35 +44,71 @@ export default function Header() {
             </svg>
           </span>
         </button>
-        <div className="collapse navbar-collapse" id="collapsibleNavId">
+        <div
+          className="collapse navbar-collapse"
+          id="collapsibleNavId"
+          style={{ alignItems: "baseline" }}
+        >
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0 text-center">
-            <li className="nav-item active li" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <li
+              className="nav-item active li"
+              data-toggle="collapse"
+              data-target=".navbar-collapse.show"
+            >
               <NavLink className="prl nav-link" to="/">
                 Home
               </NavLink>
             </li>
-            <li className="nav-item li" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <li
+              className="nav-item li"
+              data-toggle="collapse"
+              data-target=".navbar-collapse.show"
+            >
               <a href="#phim" className="prl nav-link" to="/movie-list">
                 Phim
               </a>
             </li>
-            <li className="nav-item li" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <li
+              className="nav-item li"
+              data-toggle="collapse"
+              data-target=".navbar-collapse.show"
+            >
               <a href="#tintuc" className="prl nav-link">
                 Tin Tức
               </a>
             </li>
-            <li className="nav-item li" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <li
+              className="nav-item li"
+              data-toggle="collapse"
+              data-target=".navbar-collapse.show"
+            >
               <a href="#sukien" className="prl nav-link">
                 Sự Kiện
               </a>
             </li>
           </ul>
-          <div className="ml-auto text-center">
+          <div className="ml-auto text-center d-flex align-content-center">
             {userState.userInfo ? (
               <>
-                {/* <span className="mr-3 text-danger ">
-                  Hello {userState.userInfo.hoTen}
-                </span> */}
+                <Avatar
+                  style={{
+                    backgroundColor: "rgb(228 204 187)",
+                    color: "rgb(206 141 131)",
+                  }}
+                  size="default"
+                  icon={<UserOutlined />}
+                ></Avatar>
+                <span
+                  className="ml-2 px-3"
+                  style={{
+                    color: "rgb(255, 255, 255, 0.8)",
+                    border: "1px dashed rgb(255, 255, 255, 0.8)",
+                    borderRadius: "5px",
+                    lineHeight: "32px",
+                  }}
+                >
+                  {userState.userInfo.hoTen}
+                </span>
                 <button
                   onClick={handleLogout}
                   className="btn btn-outline-danger font-weight-bold rounded-pill border-0"
