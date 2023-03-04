@@ -1,0 +1,29 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.sidebar-top,
+.sidebar-center {
+  // width: 80%;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.sidebar-top {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  font-size: 40px;
+}
+
+.fa-regular,
+.list-item-text {
+  color: #fff;
+  cursor: pointer;
+}
+
+.fa-regular {
+  padding-right: 10px;
+}

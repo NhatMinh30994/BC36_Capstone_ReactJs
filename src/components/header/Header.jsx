@@ -47,7 +47,7 @@ export default function Header() {
         <div
           className="collapse navbar-collapse"
           id="collapsibleNavId"
-          style={{ alignItems: "baseline" }}
+          style={{ alignItems: "center" }}
         >
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0 text-center">
             <li
@@ -87,34 +87,50 @@ export default function Header() {
               </a>
             </li>
           </ul>
-          <div className="ml-auto text-center d-flex align-content-center">
+          <div className="ml-auto text-center d-flex align-content-center align-items-center">
             {userState.userInfo ? (
               <>
                 <Avatar
                   style={{
                     backgroundColor: "rgb(228 204 187)",
                     color: "rgb(206 141 131)",
+                    paddingBottom: "5px"
                   }}
                   size="default"
                   icon={<UserOutlined />}
                 ></Avatar>
                 <span
-                  className="ml-2 px-3"
+                  className="ml-2 px-0"
                   style={{
-                    color: "rgb(255, 255, 255, 0.8)",
+                    // color: "rgb(255, 255, 255, 0.8)",
                     border: "1px dashed rgb(255, 255, 255, 0.8)",
                     borderRadius: "5px",
                     lineHeight: "32px",
                   }}
                 >
-                  {userState.userInfo.hoTen}
+                  {/* {userState.userInfo.hoTen} */}
+                  <div class="dropdown open">
+                    <button
+                      className="btn dropdown-toggle"
+                      type="button"
+                      id="triggerId"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      {userState.userInfo.hoTen}
+                    </button>
+
+                    <div className="dropdown-menu" aria-labelledby="triggerId">
+                      <button
+                        onClick={handleLogout}
+                        className="btn font-weight-bold"
+                      >
+                        LOGOUT
+                      </button>
+                    </div>
+                  </div>
                 </span>
-                <button
-                  onClick={handleLogout}
-                  className="btn btn-outline-danger font-weight-bold rounded-pill border-0"
-                >
-                  LOGOUT
-                </button>
               </>
             ) : (
               <>
