@@ -1,62 +1,57 @@
-import React from "react";
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-import "swiper/css/autoplay";
-
-const contentStyle = {
-  width: "100%",
-  height: "100%",
-  objectFit: "cover",
-  display: "block",
-};
+import React , { useEffect, useState } from "react";
+import { Carousel } from "antd";
+import { fetchMovieCarouselListApi } from "services/movie";
+import { NavLink } from "react-router-dom";
+import { useResponsive } from "hooks/useResponsive";
 
 export default function CarouselMovies() {
+  const [carouselList, setCarouselList] = useState([]);
+  const size = useResponsive();
+
+  let heightCarousel = "600px";
   
+  if (size.width > 1440) {
+    heightCarousel = "800px";
+  }
+  
+  const imgCarousel = {
+    height: heightCarousel,
+    objectFit: "cover",
+    width: "100%",
+  };
+  const contentStyle = {
+    width: "100%",
+    height: "600px",
+    color: "#fff",
+    textAlign: "center",
+    background: "transparent",
+    display: "flex",
+    justifyContent: "center",
+  };
+
+
+  useEffect(() => {
+    fetchMovieCarousel();
+  }, []);
+
+  const fetchMovieCarousel = async () => {
+    const result = await fetchMovieCarouselListApi();
+    setCarouselList(result.data.content);
+  };
+  const renderCarousel = () => {
+    return carouselList.map((ele) => {
+      return (
+        <NavLink key={ele.maBanner} to={`/movie-detail/${ele.maPhim}`}>
+          <div className="card-img" style={contentStyle}>
+            <img style={imgCarousel} src={ele.hinhAnh} alt="" />
+          </div>
+        </NavLink>
+      );
+    });
+  };
   return (
-    <Swiper
-      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-      spaceBetween={50}
-      slidesPerView={1}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log("slide change")}
-      autoplay={{ delay: 2500 }}
-    >
-      <SwiperSlide>
-        <div style={contentStyle}>
-          <img src="https://www.cgv.vn/media/banner/cache/1/b58515f018eb873dafa430b6f9ae0c1e/9/8/980x448_190.jpg" />
-        </div>
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <div style={contentStyle}>
-          <img src="https://www.cgv.vn/media/banner/cache/1/b58515f018eb873dafa430b6f9ae0c1e/9/8/980x448_11_-min.png" />
-        </div>
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <div style={contentStyle}>
-          <img src="https://www.cgv.vn/media/banner/cache/1/b58515f018eb873dafa430b6f9ae0c1e/9/8/980wx448h_25.jpg" />
-        </div>
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <div style={contentStyle}>
-          <img src="https://www.cgv.vn/media/banner/cache/1/b58515f018eb873dafa430b6f9ae0c1e/9/8/980x448_186.jpg" />
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div style={contentStyle}>
-          <img src="https://www.cgv.vn/media/banner/cache/1/b58515f018eb873dafa430b6f9ae0c1e/9/8/980wx448h_2_.jpg" />
-        </div>
-      </SwiperSlide>
-    </Swiper>
+    <>
+      <Carousel autoplay>{renderCarousel()}</Carousel>
+    </>
   );
 }

@@ -17,6 +17,13 @@ export const fetchMovieDetailApi = (id) => {
   });
 };
 
+export const fetchMovieCarouselListApi = () => {
+  return axiosRequest({
+    url: `/QuanLyPhim/LayDanhSachBanner`,
+    method: "GET",
+  });
+};
+
 export const addMovieApi = (data) => {
   return axiosRequest({
     url: `/QuanLyPhim/ThemPhimUploadHinh`,

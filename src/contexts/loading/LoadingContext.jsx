@@ -21,9 +21,9 @@ const LoadingProvider = (props) => {
   return (
     <LoadingContext.Provider value={[state, setState]}>
       {state.isLoading && (
-        <div class="loaders-container">
-        <div class="container">
-          <div class="box"></div>
+        <div class="loaders-container text-center">
+        <div class="container text-center">
+          <div class="box text-center"></div>
         </div>
         </div>
       )}

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchMovieListApi } from "../../../../services/movie";
-
-import { Button } from "antd";
+import { Button, notification } from "antd";
 import { useMovieList } from "../../../../hooks/useMovieList";
 import "./movieList.scss";
 
@@ -11,8 +10,10 @@ export default function MovieList() {
 
   const movieList = useMovieList();
 
+  const [movie, setMovie] = useState(8);
+
   const renderMovieList = () => {
-    return movieList.map((ele) => {
+    return movieList.slice(0, movie).map((ele) => {
       return (
         <div
           className="col-xl-3 col-lg-4 col-md-4 col-sm-6 mx-auto khung"
@@ -45,6 +46,16 @@ export default function MovieList() {
     });
   };
 
+  const handleHide = () => {
+    if (movieList.length < movie) {
+      notification.warning({
+        message: "Xin lỗi quý khách, chúng tôi sẽ tiếp tục cập nhập phim mới sau !",
+      });
+      return;
+    }
+    setMovie(movie + 8);
+  };
+
   return (
     <div>
         <h3 id="phim" className="col-11 w-100 mx-auto">
@@ -53,6 +64,8 @@ export default function MovieList() {
       <div className="row mt-3 mx-auto w-75">
         <br />
         {renderMovieList()}
+        <br />
+      <button onClick={handleHide} className="col-xl-3 col-lg-5 col-md-5 col-sm-4 col-6 btn btn-danger mt-5 mx-auto" >XEM THÊM PHIM</button>
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import { notification } from "antd";
 import React, {useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate} from "react-router-dom";
@@ -23,11 +24,18 @@ export default function Login() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const result = await loginApi(state);
-    // console.log(result);
-    dispatch(setUserInfoAction(result.data.content));
-    localStorage.setItem("USER_INFO_KEY", JSON.stringify(result.data.content));
-    navigate("/");
+    try {
+      const result = await loginApi(state);
+      // console.log(result);
+      dispatch(setUserInfoAction(result.data.content));
+      localStorage.setItem("USER_INFO_KEY", JSON.stringify(result.data.content));
+      navigate("/");
+    }catch(e){
+      notification.error({
+        message: e?.data?.content || "Sai tên đăng nhập hoặc mật khẩu !!!",
+      });
+    }
+   
 
   };
 

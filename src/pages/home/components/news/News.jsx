@@ -11,6 +11,30 @@ export default function News() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 1600,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }]
   };
   return (
     <div  className="container-fluid justify-content-center">
@@ -149,7 +173,7 @@ export default function News() {
       </div>
 
       <h3 className="col-11 mx-auto pb-4" id="sukien">TIN KHUYẾN MÃI</h3>
-      <Slider  className="row mx-auto" {...settings} >
+      <Slider  className="mx-auto" {...settings} >
         <div>
           <img className="img"
             src="https://cdn.galaxycine.vn/media/2023/2/6/500_1675669941430.jpg"
