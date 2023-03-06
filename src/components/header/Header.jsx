@@ -1,21 +1,32 @@
 import { UserOutlined } from "@ant-design/icons";
 import { Avatar } from "antd";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import { setUserInfoAction } from "../../store/actions/userAction";
 import "./header.scss";
+import { MaLoaiNguoiDung } from "enums";
 
 export default function Header() {
   const userState = useSelector((state) => state.userReducer);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const {userInfo} = userState;
+
   const handleLogout = () => {
     localStorage.removeItem("USER_INFO_KEY");
     dispatch(setUserInfoAction(null));
     navigate("/");
   };
+
+  // useEffect(() => {
+  //   if (userState.userInfo.MaLoaiNguoiDung === MaLoaiNguoiDung.QuanTri) {
+  //       document.getElementById("admin").style.display = "block";
+  //   }else{
+  //     document.getElementById("admin").style.display = "none";
+  //   }
+  // }, []);
 
   return (
     <div>
@@ -36,7 +47,7 @@ export default function Header() {
               width="25"
               height="25"
               fill="currentColor"
-              class="bi bi-card-text"
+              // class="bi bi-card-text"
               viewBox="0 0 16 16"
             >
               <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
@@ -64,7 +75,7 @@ export default function Header() {
               data-toggle="collapse"
               data-target=".navbar-collapse.show"
             >
-              <a href="#phim" className="prl nav-link" to="/movie-list">
+              <a href="#phim" className="prl nav-link" to="/">
                 Phim
               </a>
             </li>
@@ -73,7 +84,7 @@ export default function Header() {
               data-toggle="collapse"
               data-target=".navbar-collapse.show"
             >
-              <a href="#tintuc" className="prl nav-link">
+              <a href="#tintuc" className="prl nav-link" >
                 Tin Tức
               </a>
             </li>
@@ -94,7 +105,7 @@ export default function Header() {
                   style={{
                     backgroundColor: "rgb(228 204 187)",
                     color: "rgb(206 141 131)",
-                    paddingBottom: "5px"
+                    paddingBottom: "5px",
                   }}
                   size="default"
                   icon={<UserOutlined />}
@@ -102,29 +113,35 @@ export default function Header() {
                 <span
                   className="ml-2 px-0"
                   style={{
-                    // color: "rgb(255, 255, 255, 0.8)",
                     border: "1px dashed rgb(255, 255, 255, 0.8)",
                     borderRadius: "5px",
                     lineHeight: "32px",
                   }}
                 >
-                  {/* {userState.userInfo.hoTen} */}
-                  <div class="dropdown open">
+                  <div>
                     <button
-                      className="btn dropdown-toggle"
+                      className="btn dropdown-toggle text-danger"
                       type="button"
                       id="triggerId"
                       data-toggle="dropdown"
-                      aria-haspopup="true"
                       aria-expanded="false"
+                      data-offset="10,20"
                     >
                       {userState.userInfo.hoTen}
                     </button>
 
-                    <div className="dropdown-menu" aria-labelledby="triggerId">
+                    <div className="dropdown-menu dropdown-menu-right " aria-labelledby="triggerId">
+                      <button
+                        id="admin"
+                        onClick={() => navigate("/admin/movie-management")}
+                        className="btn font-weight-bold dropdown-item"
+                      >
+                        ADMIN
+                      </button>
+
                       <button
                         onClick={handleLogout}
-                        className="btn font-weight-bold"
+                        className="btn font-weight-bold dropdown-item"
                       >
                         LOGOUT
                       </button>

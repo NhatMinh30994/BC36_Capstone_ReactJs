@@ -28,6 +28,7 @@
 }
 // Droppdown
 .dropdown{
+    right: 0;
     .dropdown-toggle, .dropdown-toggle:hover{
         color: rgb(255, 255, 255, 0.8);
     }
@@ -36,7 +37,10 @@
         padding: 0;
         min-width: 7rem;
         text-align: center;
+        top: 0;
+        right: 0;
         .btn{
+            right: 0 ;
             color: rgba(255, 0, 0, 0.4);
             transition: all 1s;
         }

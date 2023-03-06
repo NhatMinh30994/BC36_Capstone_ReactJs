@@ -23,7 +23,7 @@ export default function Showtimes() {
       return (
         <a
           key={ele.maHeThongRap}
-          className={`nav-link text-uppercase bg-light text-dark rounded-pill ${idx === 0 && "active"}`}
+          className={`nav-link text-uppercase bg-light text-dark rounded-pill border mb-1 border-dark ${idx === 0 && "active"}`}
           data-toggle="pill"
           href={`#${ele.maHeThongRap}`}
           role="tab"
@@ -82,7 +82,7 @@ export default function Showtimes() {
         <div className="col-4">
           <h5 className="text-center border-bottom border-success pb-3 pt-2 text-secondary font-weight-normal ">RẠP</h5>
           <div
-            className="nav flex-column nav-pills pt-2 text-center"
+            className="nav flex-column nav-pills pt-2 text-center  "
             id="v-pills-tab"
             role="tablist"
             aria-orientation="vertical"

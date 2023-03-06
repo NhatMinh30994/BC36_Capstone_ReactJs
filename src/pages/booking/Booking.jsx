@@ -90,7 +90,7 @@ export default function Booking() {
         </div>
 
         <div className="col-xl-12 col-lg-12 pt-4 text-center pb-5">
-          <div style={{ width: "90%" }} className="mx-auto">
+          <div style={{ width: "90%" }} className="mx-auto ">
              {renderSeats()}
           </div>
         </div>
