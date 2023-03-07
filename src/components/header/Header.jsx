@@ -12,7 +12,7 @@ export default function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const {userInfo} = userState;
+  const { userInfo } = userState;
 
   const handleLogout = () => {
     localStorage.removeItem("USER_INFO_KEY");
@@ -27,6 +27,76 @@ export default function Header() {
   //     document.getElementById("admin").style.display = "none";
   //   }
   // }, []);
+
+  const handleShow = () => {
+    if (userState.userInfo.maLoaiNguoiDung === MaLoaiNguoiDung.QuanTri) {
+      return (
+        <>
+          <div>
+            <button
+              className="btn dropdown-toggle text-danger"
+              type="button"
+              id="triggerId"
+              data-toggle="dropdown"
+              aria-expanded="false"
+              data-offset="10,20"
+            >
+              {userState.userInfo.hoTen}
+            </button>
+
+            <div
+              className="dropdown-menu dropdown-menu-right "
+              aria-labelledby="triggerId"
+            >
+              <button
+                id="admin"
+                onClick={() => navigate("/admin/movie-management")}
+                className="btn font-weight-bold dropdown-item"
+              >
+                ADMIN
+              </button>
+
+              <button
+                onClick={handleLogout}
+                className="btn font-weight-bold dropdown-item"
+              >
+                LOGOUT
+              </button>
+            </div>
+          </div>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <div>
+            <button
+              className="btn dropdown-toggle text-danger"
+              type="button"
+              id="triggerId"
+              data-toggle="dropdown"
+              aria-expanded="false"
+              data-offset="10,20"
+            >
+              {userState.userInfo.hoTen}
+            </button>
+
+            <div
+              className="dropdown-menu dropdown-menu-right "
+              aria-labelledby="triggerId"
+            >
+              <button
+                onClick={handleLogout}
+                className="btn font-weight-bold dropdown-item"
+              >
+                LOGOUT
+              </button>
+            </div>
+          </div>
+        </>
+      );
+    }
+  };
 
   return (
     <div>
@@ -84,7 +154,7 @@ export default function Header() {
               data-toggle="collapse"
               data-target=".navbar-collapse.show"
             >
-              <a href="#tintuc" className="prl nav-link" >
+              <a href="#tintuc" className="prl nav-link">
                 Tin Tức
               </a>
             </li>
@@ -118,7 +188,7 @@ export default function Header() {
                     lineHeight: "32px",
                   }}
                 >
-                  <div>
+                  {/* <div>
                     <button
                       className="btn dropdown-toggle text-danger"
                       type="button"
@@ -130,7 +200,10 @@ export default function Header() {
                       {userState.userInfo.hoTen}
                     </button>
 
-                    <div className="dropdown-menu dropdown-menu-right " aria-labelledby="triggerId">
+                    <div
+                      className="dropdown-menu dropdown-menu-right "
+                      aria-labelledby="triggerId"
+                    >
                       <button
                         id="admin"
                         onClick={() => navigate("/admin/movie-management")}
@@ -146,7 +219,8 @@ export default function Header() {
                         LOGOUT
                       </button>
                     </div>
-                  </div>
+                  </div> */}
+                  {handleShow()}
                 </span>
               </>
             ) : (
