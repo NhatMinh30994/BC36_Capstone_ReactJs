@@ -19,9 +19,9 @@ export default function Detail() {
   };
 
   return (
-    <div className="col-12 mb-3">
-      <div className="row ">
-        <div className="col-xl-4 col-lg-4 col-md-6 pb-4">
+    <div className="col-12 mt-5 mb-3 ">
+      <div className="row">
+        <div className="col-xl-4 col-lg-4 col-md-6 pb-4  ">
           <img className="w-100 rounded" src={movieDetail.hinhAnh} />
         </div>
         <div className="col-xl-8 col-lg-8 col-md-6 text-justifys">

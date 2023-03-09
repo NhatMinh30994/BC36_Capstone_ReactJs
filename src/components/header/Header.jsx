@@ -100,7 +100,7 @@ export default function Header() {
             />
           </span>
           <b className="logo-name text-dark">
-            Gana<span className="text-muted">Xi</span>
+            Gana<span className="text-muted font-italic">Xi</span>
           </b>
         </h5>
         <div

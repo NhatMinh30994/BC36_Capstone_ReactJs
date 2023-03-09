@@ -69,50 +69,49 @@ export default function Booking() {
   };
 
   return (
-    <div className="py-5">
-      <div className="row mx-auto ">
+    <div className="py-5 ">
+      <div className="row mt-5">
         <h2 className="col-12 text-center pb-2 text-primary border-bottom border-primary font-weight-bold">
           SƠ ĐỒ CHỖ NGỒI - RẠP 1{" "}
         </h2>
-        <div className="row text-center mx-auto pt-3">
-          <div className="col-xl-3 mb-lg-2 mb-md-2 mb-2 p-2 rounded-pill bg-secondary text-white ">
+        {/* <div className="col-8 mb-4">
+          <div className="mr-1 mb-1 d-inline-block p-2 rounded text-white bg-secondary">
             Ghế đã được đặt
           </div>
-          <div className="col-xl-3 mb-lg-2 mb-md-2 mb-2 p-2 rounded-pill bg-dark text-white">
+          <div className="mr-1 mb-1 d-inline-block p-2 rounded text-white bg-dark">
             Ghế trống
           </div>
-          <div className="col-xl-3 mb-lg-2 mb-md-2 mb-2 p-2 rounded-pill bg-success text-white">
+          <div className="mr-1 mb-1 d-inline-block p-2 rounded text-white bg-primary">
             Ghế đang chọn
           </div>
-          <div className="col-xl-3 mb-lg-2 mb-md-2 mb-2 p-2 rounded-pill bg-warning text-white">
+          <div className="mr-1 mb-1 d-inline-block p-2 rounded text-white bg-warning">
             Ghế VIP
           </div>
-        </div>
+        </div> */}
 
-        <div className="col-xl-12 col-lg-12 pt-4 text-center pb-5">
-          <div style={{ width: "90%" }} className="mx-auto ">
+        <div className="col-8 pt-4 text-center">
+          <div style={{ width: "100%" }} className="">
              {renderSeats()}
           </div>
         </div>
-
-        <div className="row mx-auto pt-2 border border-dark">
+        <div className="row col-4 pt-4">  
           {" "}
           <img
-            className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-10 mx-auto pb-2"
-            style={{ width: 400, height: 500, objectFit: "cover" }}
+            className="col-xl-6 col-lg-6"
+            style={{ width: 400, height: 400, objectFit: "cover" }}
             src={ticketDetail?.thongTinPhim?.hinhAnh}
             alt="#"
           />
-          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-10 mx-auto">
-            <h4 className="mb-0 font-weight-bolder pb-3">
-              PHIM: {ticketDetail?.thongTinPhim?.tenPhim}
+          <div className="col-xl-6 col-lg-6 ">
+            <h4 className="mb-0 font-weight-bolder mb-4 font-weight-bold">
+              {ticketDetail?.thongTinPhim?.tenPhim}
             </h4>
             <h5 className="mb-0 pb-2 ">
               Ghế đã chọn :<br className="pt-2" />
               <div className="d-flex">
                 {selectedSeatList.map((ele) => {
                   return (
-                    <p key={ele.maGhe} className="badge badge-info mr-2 mb-0">
+                    <p key={ele.maGhe} className="badge badge-info mr-2 mb-2">
                       {ele.tenGhe}
                     </p>
                   );
