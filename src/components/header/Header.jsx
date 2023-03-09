@@ -12,21 +12,11 @@ export default function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { userInfo } = userState;
-
   const handleLogout = () => {
     localStorage.removeItem("USER_INFO_KEY");
     dispatch(setUserInfoAction(null));
     navigate("/");
   };
-
-  // useEffect(() => {
-  //   if (userState.userInfo.MaLoaiNguoiDung === MaLoaiNguoiDung.QuanTri) {
-  //       document.getElementById("admin").style.display = "block";
-  //   }else{
-  //     document.getElementById("admin").style.display = "none";
-  //   }
-  // }, []);
 
   const handleShow = () => {
     if (userState.userInfo.maLoaiNguoiDung === MaLoaiNguoiDung.QuanTri) {
@@ -50,15 +40,16 @@ export default function Header() {
             >
               <button
                 id="admin"
-                onClick={() => navigate("/admin/movie-management")}
+                onClick={() => navigate("/admin/user-management")}
                 className="btn font-weight-bold dropdown-item"
+                style={{ color: "green" }}
               >
-                ADMIN
+                DASHBOARD
               </button>
 
               <button
                 onClick={handleLogout}
-                className="btn font-weight-bold dropdown-item"
+                className="text-danger btn font-weight-bold dropdown-item"
               >
                 LOGOUT
               </button>
@@ -87,7 +78,7 @@ export default function Header() {
             >
               <button
                 onClick={handleLogout}
-                className="btn font-weight-bold dropdown-item"
+                className="text-danger btn font-weight-bold dropdown-item"
               >
                 LOGOUT
               </button>
@@ -100,44 +91,31 @@ export default function Header() {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-md dark">
-        <button
-          className="navbar-toggler d-lg-none"
-          type="button"
-          data-toggle="collapse"
-          data-target="#collapsibleNavId"
-          aria-controls="collapsibleNavId"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="text-dark rounded bg-white  pl-2 pr-2 pb-1">
-            <svg
-              className="text-center"
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="25"
-              fill="currentColor"
-              // class="bi bi-card-text"
-              viewBox="0 0 16 16"
-            >
-              <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
-              <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z" />
-            </svg>
+      <nav className="navbar navbar-expand-md">
+        <h5 className="logo-top">
+          <span>
+            <img
+              src="https://www.svgrepo.com/show/227816/galaxy.svg"
+              className="logo-top"
+            />
           </span>
-        </button>
+          <b className="logo-name text-dark">
+            Gana<span className="text-muted">Xi</span>
+          </b>
+        </h5>
         <div
           className="collapse navbar-collapse"
           id="collapsibleNavId"
           style={{ alignItems: "center" }}
         >
-          <ul className="navbar-nav mr-auto mt-2 mt-lg-0 text-center">
+          <ul className="navbar-nav ml-auto mt-2 mt-lg-0 text-center">
             <li
               className="nav-item active li"
               data-toggle="collapse"
               data-target=".navbar-collapse.show"
             >
-              <NavLink className="prl nav-link" to="/">
-                Home
+              <NavLink className="active prl nav-link" to="/">
+                Trang chủ
               </NavLink>
             </li>
             <li
@@ -168,7 +146,7 @@ export default function Header() {
               </a>
             </li>
           </ul>
-          <div className="ml-auto text-center d-flex align-content-center align-items-center">
+          <div className="ml-auto text-center d-flex align-content-center align-items-center top-right">
             {userState.userInfo ? (
               <>
                 <Avatar

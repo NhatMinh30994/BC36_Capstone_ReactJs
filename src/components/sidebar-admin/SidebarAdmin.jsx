@@ -6,26 +6,27 @@ export default function SidebarAdmin() {
   const navigate = useNavigate();
   return (
     <div className="sidebar">
-      <div className="sidebar-top logo">Logo</div>
+      <div
+        className="sidebar-top logo"
+        onClick={() => navigate("/")}
+      >
+        Ganaxi Cinema
+      </div>
       <div className="sidebar-center">
         <ul className="list">
-          <li className="list-item">
-            <i class="fa-regular fa-user"></i>
-            <span
-              onClick={() => navigate("/admin/user-management")}
-              className="list-item-text"
-            >
-              User
-            </span>
+          <li
+            className="list-item"
+            onClick={() => navigate("/admin/user-management")}
+          >
+            <i class="list-item-icon fa-regular fa-user"></i>
+            <span className="list-item-text">User</span>
           </li>
-          <li className="list-item">
-            <i class="fa-regular fa-file"></i>
-            <span
-              onClick={() => navigate("/admin/movie-management")}
-              className="list-item-text"
-            >
-              Movie
-            </span>
+          <li
+            className="list-item"
+            onClick={() => navigate("/admin/movie-management")}
+          >
+            <i class="list-item-icon fa-regular fa-file"></i>
+            <span className="list-item-text">Movie</span>
           </li>
         </ul>
       </div>
