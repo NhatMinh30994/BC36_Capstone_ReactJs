@@ -91,7 +91,7 @@ export default function Header() {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-md">
+      <nav className="navbarGanaxi navbar navbar-expand-md">
         <h5 className="logo-top">
           <span>
             <img
@@ -103,9 +103,20 @@ export default function Header() {
             Gana<span className="text-muted font-italic">Xi</span>
           </b>
         </h5>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa fa-bars"></i>
+        </button>
         <div
           className="collapse navbar-collapse"
-          id="collapsibleNavId"
+          id="navbarNav"
           style={{ alignItems: "center" }}
         >
           <ul className="navbar-nav ml-auto mt-2 mt-lg-0 text-center">
@@ -146,7 +157,7 @@ export default function Header() {
               </a>
             </li>
           </ul>
-          <div className="ml-auto text-center d-flex align-content-center align-items-center top-right">
+          <div className="text-center d-flex align-content-center align-items-center top-right">
             {userState.userInfo ? (
               <>
                 <Avatar

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./seat.scss"
 
 export default function Seat(props) {
   const [isSelected, setIsSelected] = useState(false);
@@ -26,8 +27,8 @@ export default function Seat(props) {
     <button
       onClick={handleSelectSeat}
       disabled={props.ele.daDat === true}
-      style={{ width: 50, height: 50, padding: 0 }}
-      className={`mr-1 mb-1 btn ${populateClassName()}`}
+      // style={{ width: 40, height: 40, padding: 0 }}
+      className={`mr-1 mb-1 btn ${populateClassName()} seat`}
     >
       {props.ele.tenGhe}
     </button>
