@@ -177,38 +177,6 @@ export default function Header() {
                     lineHeight: "32px",
                   }}
                 >
-                  {/* <div>
-                    <button
-                      className="btn dropdown-toggle text-danger"
-                      type="button"
-                      id="triggerId"
-                      data-toggle="dropdown"
-                      aria-expanded="false"
-                      data-offset="10,20"
-                    >
-                      {userState.userInfo.hoTen}
-                    </button>
-
-                    <div
-                      className="dropdown-menu dropdown-menu-right "
-                      aria-labelledby="triggerId"
-                    >
-                      <button
-                        id="admin"
-                        onClick={() => navigate("/admin/movie-management")}
-                        className="btn font-weight-bold dropdown-item"
-                      >
-                        ADMIN
-                      </button>
-
-                      <button
-                        onClick={handleLogout}
-                        className="btn font-weight-bold dropdown-item"
-                      >
-                        LOGOUT
-                      </button>
-                    </div>
-                  </div> */}
                   {handleShow()}
                 </span>
               </>

@@ -6,7 +6,7 @@ import News from "./components/news/News";
 
 export default function HomePage() {
   return (
-    <div className="">
+    <div className="" style={{ overflow: "hidden" }}>
       <CarouselMovies/>
       <MovieList/>
       <News/>

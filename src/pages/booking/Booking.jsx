@@ -71,71 +71,8 @@ export default function Booking() {
   };
 
   return (
-    // <div className="py-5 ">
-    //   <div className="row mt-5">
-    //     <h2 className="col-12 text-center pb-2 text-primary border-bottom border-primary font-weight-bold">
-    //       SƠ ĐỒ CHỖ NGỒI - RẠP 1{" "}
-    //     </h2>
-    //     {/* <div className="col-8 mb-4">
-    //       <div className="mr-1 mb-1 d-inline-block p-2 rounded text-white bg-secondary">
-    //         Ghế đã được đặt
-    //       </div>
-    //       <div className="mr-1 mb-1 d-inline-block p-2 rounded text-white bg-dark">
-    //         Ghế trống
-    //       </div>
-    //       <div className="mr-1 mb-1 d-inline-block p-2 rounded text-white bg-primary">
-    //         Ghế đang chọn
-    //       </div>
-    //       <div className="mr-1 mb-1 d-inline-block p-2 rounded text-white bg-warning">
-    //         Ghế VIP
-    //       </div>
-    //     </div> */}
-
-    //     <div className="col-8 pt-4 text-center">
-    //       <div style={{ width: "100%" }} className="">
-    //          {renderSeats()}
-    //       </div>
-    //     </div>
-    //     <div className="row col-4 pt-4">
-    //       {" "}
-    //       <img
-    //         className="col-xl-6 col-lg-6"
-    //         style={{ width: 400, height: 400, objectFit: "cover" }}
-    //         src={ticketDetail?.thongTinPhim?.hinhAnh}
-    //         alt="#"
-    //       />
-    //       <div className="col-xl-6 col-lg-6 ">
-    //         <h4 className="mb-0 font-weight-bolder mb-4 font-weight-bold">
-    //           {ticketDetail?.thongTinPhim?.tenPhim}
-    //         </h4>
-    //         <h5 className="mb-0 pb-2 ">
-    //           Ghế đã chọn :<br className="pt-2" />
-    //           <div className="d-flex">
-    //             {selectedSeatList.map((ele) => {
-    //               return (
-    //                 <p key={ele.maGhe} className="badge badge-info mr-2 mb-2">
-    //                   {ele.tenGhe}
-    //                 </p>
-    //               );
-    //             })}
-    //           </div>
-    //         </h5>
-    //         <h5>
-    //           Thanh Toán: {_.sumBy(selectedSeatList, "giaVe").toLocaleString()}{" "}
-    //           VND
-    //         </h5>
-    //         <button onClick={bookTicket} className="btn btn-danger p-3 mt-3 mb-2">
-    //           ĐẶT VÉ
-    //         </button>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
     <div
       className="pt-5"
-      // style={{
-      //   minHeight: "calc( 100vh - 160px )",
-      // }}
     >
       <h2 className="col-12 text-center pt-5 pb-2 text-primary border-bottom border-primary font-weight-bold">
         SƠ ĐỒ CHỖ NGỒI - RẠP 1{" "}
