@@ -61,6 +61,9 @@ export default function MovieManagement() {
                     notification.success({
                       message: "Xóa phim thành công",
                     });
+                    setTimeout(() => {
+                      window.location.reload();
+                    }, 800);
                   }
                 } catch (error) {
                   notification.error({
@@ -100,7 +103,7 @@ export default function MovieManagement() {
         size="large"
         onSearch={onSearch}
       />
-      <Table columns={columns} dataSource={movieList} />
+      <Table columns={columns} dataSource={movieList} rowKey={"tenPhim"}/>
     </div>
   );
 }

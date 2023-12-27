@@ -68,6 +68,9 @@ export default function UserManagement() {
                     notification.success({
                       message: "Xóa người dùng thành công",
                     });
+                    setTimeout(() => {
+                      window.location.reload();
+                    }, 800);
                   }
                 } catch (error) {
                   notification.error({
@@ -99,7 +102,7 @@ export default function UserManagement() {
         size="large"
         onSearch={onSearch}
       />
-      <Table columns={columns} dataSource={userList} />
+      <Table columns={columns} dataSource={userList} rowKey={"taiKhoan"}/>
     </div>
   );
 }
